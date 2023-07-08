@@ -21,14 +21,14 @@ body {
 @font-face {
   font-family: "Ubuntu-Medium";
   src: local("Ubuntu-Medium"),
-    url("../public/assets/fonts/static/Ubuntu-Medium.ttf") format("truetype");
+    url("../public/assets/fonts/Ubuntu-Medium.ttf") format("truetype");
   font-weight: 500;
 }
 
 @font-face {
   font-family: "Ubuntu-Bold";
   src: local("Ubuntu-Bold"),
-    url("../public/assets/fonts/static/Ubuntu-Bold.ttf") format("truetype");
+    url("../public/assets/fonts/Ubuntu-Bold.ttf") format("truetype");
   font-weight: 700;
 }
 
