@@ -32,7 +32,7 @@ const Index = () => {
     addOns: [1],
   });
   const [formError, setFormError] = useState({});
-  const [page, setPage] = useState(2);
+  const [page, setPage] = useState(1);
 
   const plans = [
     {
