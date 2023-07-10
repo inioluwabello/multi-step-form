@@ -1,4 +1,5 @@
-import PersonalInfo from "./PersonalInfoComponent";
+import PersonalInfoComponent from "./PersonalInfoComponent";
+import PlanComponent from "./PlanComponent";
 
 const MobileView = ({
   userInfo,
@@ -9,11 +10,11 @@ const MobileView = ({
   setPage,
 }) => {
   const goToPage = (pageNumber) => {
-    if (page1Valid() === true) {
-      setPage(pageNumber);
-    }
+    if (page === 1 && page1hasErrors() === true) return;
+    
+    setPage(pageNumber)
   };
-  const page1Valid = () => {
+  const page1hasErrors = () => {
     let error = false;
     if (!userInfo.name || userInfo.name === "") {
       setFormError({
@@ -45,7 +46,7 @@ const MobileView = ({
       window.alert("There are still some errors on the page");
       error = true;
     }
-    return !error;
+    return error;
   };
   return (
     <main role="main" className="mobile">
@@ -70,31 +71,42 @@ const MobileView = ({
       <div className="p-3 mt--54">
         <div className="main-content-mobile white-bg">
           {page === 1 && (
-            <PersonalInfo
+            <PersonalInfoComponent
               userInfo={userInfo}
               setUserInfo={setUserInfo}
               formError={formError}
               setFormError={setFormError}
-              page={page}
-              setPage={setPage}
+            />
+          )}
+
+          {page === 2 && (
+            <PlanComponent
+              userInfo={userInfo}
+              setUserInfo={setUserInfo}
             />
           )}
         </div>
       </div>
       <footer className="footer white-bg text-right">
         <div className="space-between">
-          {page > 1 && <button
-            className="pry white-bg cool-grey"
-            onClick={() => goToPage(page - 1)}
-          >
-            Go Back
-          </button> }
-          <button
-            className="pry marine-blue-bg white"
-            onClick={() => goToPage(page + 1)}
-          >
-            Next Step
-          </button>
+          <div>
+            {page > 1 && (
+              <button
+                className="pry white-bg cool-grey"
+                onClick={() => goToPage(page - 1)}
+              >
+                Go Back
+              </button>
+            )}
+          </div>
+          <div>
+            <button
+              className="pry marine-blue-bg white"
+              onClick={() => goToPage(page + 1)}
+            >
+              Next Step
+            </button>
+          </div>
         </div>
       </footer>
     </main>

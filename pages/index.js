@@ -26,7 +26,7 @@ const Index = () => {
 
   const isMobile = pageWidth <= 770;
 
-  const [userInfo, setUserInfo] = useState({});
+  const [userInfo, setUserInfo] = useState({billingPeriod: "mo", plan: "Arcade"});
   const [formError, setFormError] = useState({});
   const [page, setPage] = useState(1);
 

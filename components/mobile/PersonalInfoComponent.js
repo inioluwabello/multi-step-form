@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const PersonalInfo = ({ userInfo, setUserInfo, formError, setFormError }) => {
+const PersonalInfoComponent = ({ userInfo, setUserInfo, formError, setFormError }) => {
   const validateName = (name) => {
     const isValid = name && name.length > 3;
     setFormError({
@@ -117,4 +117,4 @@ const isValidEmail = (email) => {
     const regexPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return regexPattern.test(email);
   };
-export default PersonalInfo;
+export default PersonalInfoComponent;
