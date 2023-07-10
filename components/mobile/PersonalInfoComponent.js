@@ -26,9 +26,7 @@ const PersonalInfo = ({ userInfo, setUserInfo, formError, setFormError }) => {
   };
 
   const validatePhone = (phone) => {
-    const isValid = phone && !isNaN(
-      parseInt(userInfo.phoneNumber.replaceAll(" ", "").replaceAll("+", ""))
-    );
+    const isValid = /^\d*$/.test(phone.replaceAll("+", "").replaceAll(" ", ""));
     setFormError({
       ...formError,
       phoneError: !isValid ? { message: "Invalid phone number" } : null,
@@ -38,7 +36,7 @@ const PersonalInfo = ({ userInfo, setUserInfo, formError, setFormError }) => {
     setUserInfo({ ...userInfo, phoneNumber: e.target.value });
     validatePhone(e.target.value);
   };
-  
+
   return (
     <div className="form-wrapper marine-blue">
       <div className="form-title">
