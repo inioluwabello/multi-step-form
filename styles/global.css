@@ -44,19 +44,88 @@ body {
   font-family: "Ubuntu-Bold" !important;
 }
 
-/* Mobile */
-@media only screen and (max-width: 700px) {
-  .centered-content {
-    width: 100% !important;
-    align-items: start !important;
-  }
-
-  .content-wrapper {
-    border-radius: 0 !important;
-    box-shadow: none !important;
-  }
+/* Colors */
+.white {
+  color: hsl(0, 0%, 100%);
 }
 
+.white-bg {
+  background-color: hsl(0, 0%, 100%);
+}
+
+.alabaster {
+  color: hsl(0, 0%, 100%);
+}
+
+.alabaster-bg {
+  background-color: hsl(231, 100%, 99%);
+}
+
+.magnolia {
+  color: hsl(217, 100%, 97%);
+}
+
+.magnolia-bg {
+  background-color: hsl(217, 100%, 97%);
+}
+
+.light-grey {
+  color: hsl(229, 24%, 87%);
+}
+
+.light-grey-bg {
+  background-color: hsl(229, 24%, 87%);
+}
+
+.cool-grey {
+  color: hsl(231, 11%, 63%);
+}
+
+.cool-grey-bg {
+  background-color: hsl(231, 11%, 63%);
+}
+
+.strawberry-red {
+  color: hsl(354, 84%, 57%);
+}
+
+.strawberry-red-bg {
+  background-color: hsl(354, 84%, 57%);
+}
+
+.light-blue {
+  color: hsl(206, 94%, 87%);
+}
+
+.light-blue-bg {
+  background-color: hsl(206, 94%, 87%);
+}
+
+.pastel-blue {
+  color: hsl(228, 100%, 84%);
+}
+
+.pastel-blue-bg {
+  background-color: hsl(228, 100%, 84%);
+}
+
+.purplish-blue {
+  color: hsl(243, 100%, 62%);
+}
+
+.purplish-blue-bg {
+  background-color: hsl(243, 100%, 62%);
+}
+
+.marine-blue {
+  color: hsl(213, 96%, 18%);
+}
+
+.marine-blue-bg {
+  background-color: hsl(213, 96%, 18%);
+}
+
+/* layout.js */
 .content {
   height: 100vh;
   width: 100%;
@@ -65,6 +134,7 @@ body {
   overflow: auto;
 }
 
+/* Index.js */
 .centered-content {
   width: 500px;
   min-height: 100%;
@@ -74,25 +144,73 @@ body {
   justify-content: center;
 }
 
-.content-wrapper {
+/* Mobile */
+@media only screen and (max-width: 700px) {
+  .centered-content {
+    width: 100% !important;
+    align-items: start !important;
+  }
+}
+
+.mobile {
+  width: 100%;
+  padding-bottom: 6rem;
+}
+
+.main-content-mobile {
   min-height: 200px;
   width: 100%;
-  border-radius: 20px;
-  box-shadow: 0 2px 3px 4px #ebf1ff;
+  border-radius: 10px;
+  box-shadow: 0px 5px 12px -4px hsl(229, 24%, 87%);
+}
+
+.header {
+  height: 170px;
+  background: url("/assets/images/bg-sidebar-mobile.svg");
+  background-repeat: no-repeat;
+}
+
+.footer {
+  position: fixed;
+  height: 5rem;
+  width: 100%;
+  padding: 1rem;
+  bottom: 0;
+}
+
+/* End Mobile */
+
+.mt--1 {
+  margin-top: -1rem;
+}
+
+.mt--2 {
+  margin-top: -2rem;
+}
+
+.mt--3 {
+  margin-top: -3rem;
+}
+.mt--54 {
+  margin-top: -5.4rem
 }
 
 .text-sm {
   font-size: .8rem;
 }
+
 .text-md {
   font-size: .9rem;
 }
+
 .text-lg {
   font-size: 1.5rem;
 }
+
 .text-xl {
   font-size: 3rem;
 }
+
 .bold {
   font-weight: bold;
 }
@@ -143,4 +261,10 @@ img {
 
 .absolute {
   position: absolute;
+}
+
+button.pry {
+  border: none;
+  border-radius: 4px;
+  padding: .7rem 1rem;
 }

@@ -32,7 +32,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [GitHub](https://github.com/inioluwabello/multi-step-form)
-- Live Site URL: [Vercel](https://result-summary-beta.vercel.app)
+- Live Site URL: [Vercel](https://multi-step-form-khaki-ten.vercel.app)
 
 ## My process
 

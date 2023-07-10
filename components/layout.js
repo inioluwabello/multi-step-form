@@ -1,7 +1,7 @@
 const Layout = ({ children }) => {
   return (
     <>
-      <div className="content off-white">{children}</div>
+      <div className="content magnolia-bg">{children}</div>
       <div className="text-center" style={{ color: "#ffffff" }}>
           Challenge by{" "}
           <a

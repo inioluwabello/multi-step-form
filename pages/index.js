@@ -1,15 +1,38 @@
 import Layout from "../components/layout";
 import Heading from "../components/heading";
+import { useEffect, useState } from "react";
+import MobileView from "../components/mobile/MobileView";
+import DesktopView from "../components/desktop/DesktopView";
 
 const Index = () => {
+  const [pageWidth, setPageWidth] = useState(770);
+
+  const handleWindowSizeChange = () => {
+    const width = window.innerWidth;
+    setPageWidth(width);
+  };
+
+  setTimeout(() => {
+    handleWindowSizeChange();
+  }, 500);
+
+  useEffect(() => {
+    window.addEventListener("resize", handleWindowSizeChange);
+
+    return () => {
+      window.removeEventListener("resize", handleWindowSizeChange);
+    };
+  }, []);
+
+  const isMobile = pageWidth <= 770;
+
   return (
     <>
       <Heading title={"Multi-step Form"} />
       <Layout>
         <div className="centered-content fontFaceUbuntuRegular">
-          <div className="content-wrapper">
-            
-          </div>
+          {isMobile && <MobileView />}
+          {!isMobile && <DesktopView />}
         </div>
       </Layout>
     </>
