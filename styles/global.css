@@ -155,6 +155,7 @@ body {
 .mobile {
   width: 100%;
   padding-bottom: 6rem;
+  height: calc(100vh - 5rem);
 }
 
 .main-content-mobile {
@@ -165,9 +166,10 @@ body {
 }
 
 .header {
-  height: 170px;
+  height: 42%;
   background: url("/assets/images/bg-sidebar-mobile.svg");
   background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .footer {
@@ -179,6 +181,20 @@ body {
 }
 
 /* End Mobile */
+
+/* Mobile & Desktop */
+.form-wrapper {
+  padding: 1.5rem;
+}
+label {
+  margin-top: 1em;
+}
+label:first-of-type {
+  margin-top: unset;
+}
+/*End Mobile & Desktop */
+
+
 
 .mt--1 {
   margin-top: -1rem;

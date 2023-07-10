@@ -26,12 +26,14 @@ const Index = () => {
 
   const isMobile = pageWidth <= 770;
 
+  const [userInfo, setUserInfo] = useState({})
+
   return (
     <>
       <Heading title={"Multi-step Form"} />
       <Layout>
         <div className="centered-content fontFaceUbuntuRegular">
-          {isMobile && <MobileView />}
+          {isMobile && <MobileView userInfo={userInfo} setUserInfo={setUserInfo} />}
           {!isMobile && <DesktopView />}
         </div>
       </Layout>
