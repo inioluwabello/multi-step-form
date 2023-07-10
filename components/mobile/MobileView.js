@@ -125,7 +125,7 @@ const MobileView = ({
               </button>
             )}
           </div>
-          {page < 5 && (
+          {page < 4 && (
             <div>
               <button
                 className="pry btn-hover marine-blue-bg white"
@@ -135,7 +135,7 @@ const MobileView = ({
               </button>
             </div>
           )}
-          {page === 5 && (
+          {page === 4 && (
             <div>
               <button
                 className="pry btn-hover purplish-blue-bg white"

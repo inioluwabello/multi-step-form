@@ -34,7 +34,7 @@ const PreviewComponent = ({ userInfo, plans, addOns, setPage }) => {
               {userInfo.plan} (
               {userInfo.billingPeriod === "mo" ? "Monthly" : "Yearly"})
               <div className="fontFaceUbuntuRegular cool-grey">
-                <a className="link-text" onClick={() => setPage(2)}>
+                <a className="link-text link-hover" onClick={() => setPage(2)}>
                   Change
                 </a>
               </div>

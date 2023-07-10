@@ -243,6 +243,9 @@ input.form-error {
   border: 1px solid hsl(243, 100%, 62%);
   background: hsl(231, 100%, 99%);
 }
+.tab:hover {
+  border: 1px solid hsl(243, 100%, 62%);
+}
 
 .tab-icon {
   margin-right: 1em;
@@ -266,6 +269,12 @@ button.purplish-blue-bg{
 }
 .btn-hover:hover {
   opacity: .7;
+}
+.link-text {
+  cursor: pointer;
+}
+.link-hover:hover {
+  color: hsl(243, 100%, 62%);
 }
 .form-content > div {
   border-radius: 5px;

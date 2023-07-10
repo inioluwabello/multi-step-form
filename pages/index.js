@@ -28,7 +28,7 @@ const Index = () => {
 
   const [userInfo, setUserInfo] = useState({billingPeriod: "mo", plan: "Arcade", addOns: [1]});
   const [formError, setFormError] = useState({});
-  const [page, setPage] = useState(1);
+  const [page, setPage] = useState(2);
 
   const plans = [
     {
