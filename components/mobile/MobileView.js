@@ -83,12 +83,12 @@ const MobileView = ({
       </div>
       <footer className="footer white-bg text-right">
         <div className="space-between">
-          <button
+          {page > 1 && <button
             className="pry white-bg cool-grey"
             onClick={() => goToPage(page - 1)}
           >
             Go Back
-          </button>
+          </button> }
           <button
             className="pry marine-blue-bg white"
             onClick={() => goToPage(page + 1)}
