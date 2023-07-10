@@ -48,14 +48,14 @@ const PersonalInfoComponent = ({ userInfo, setUserInfo, formError, setFormError 
 
       <div className="form-content">
         <label className="fontFaceUbuntuRegular" htmlFor="name">
-          <div className="space-between">
+          <span className="space-between">
             <span>Name</span>
             {formError.nameError && (
               <span className="form-error strawberry-red">
                 {formError.nameError.message}
               </span>
             )}
-          </div>
+          </span>
           <input
             type="text"
             id="name"
@@ -68,14 +68,14 @@ const PersonalInfoComponent = ({ userInfo, setUserInfo, formError, setFormError 
           />
         </label>
         <label className="fontFaceUbuntuRegular" htmlFor="email">
-          <div className="space-between">
+          <span className="space-between">
             <span>Email</span>
             {formError.emailError && (
               <span className="form-error strawberry-red">
                 {formError.emailError.message}
               </span>
             )}
-          </div>
+          </span>
           <input
             type="email"
             id="email"
@@ -88,14 +88,14 @@ const PersonalInfoComponent = ({ userInfo, setUserInfo, formError, setFormError 
           />
         </label>
         <label className="fontFaceUbuntuRegular" htmlFor="phone-number">
-          <div className="space-between">
+          <span className="space-between">
             <span>Phone Number</span>
             {formError.phoneError && (
               <span className="form-error strawberry-red">
                 {formError.phoneError.message}
               </span>
             )}
-          </div>
+          </span>
 
           <input
             type="text"
