@@ -62,7 +62,7 @@ body {
 }
 
 .magnolia {
-  color: hsl(217, 100%, 97%);
+  color: hsl(217, 100%, 97%) !important;
 }
 
 .magnolia-bg {
@@ -118,7 +118,7 @@ body {
 }
 
 .marine-blue {
-  color: hsl(213, 96%, 18%);
+  color: hsl(213, 96%, 18%) !important;
 }
 
 .marine-blue-bg {
@@ -166,7 +166,7 @@ body {
 }
 
 .header {
-  height: 42%;
+  height: 30%;
   background: url("/assets/images/bg-sidebar-mobile.svg");
   background-repeat: no-repeat;
   background-size: cover;
@@ -180,18 +180,52 @@ body {
   bottom: 0;
 }
 
+.steps {
+  width: 50%;
+  margin: 0 auto;
+  padding: 2em 0;
+}
+
+.steps>div>span {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  padding: 2px;
+  border-radius: 30px;
+  border: 1px solid hsl(217, 100%, 97%);
+  color: hsl(217, 100%, 97%);
+}
+
 /* End Mobile */
 
 /* Mobile & Desktop */
 .form-wrapper {
   padding: 1.5rem;
 }
+
 label {
   margin-top: 1em;
 }
+
 label:first-of-type {
   margin-top: unset;
 }
+
+input:focus {
+  border: 1px solid hsl(243, 100%, 62%);
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+.form-control {
+  padding: .8em;
+}
+
+input.form-error {
+  border: 1px solid hsl(354, 84%, 57%) !important;
+}
+
 /*End Mobile & Desktop */
 
 
@@ -207,6 +241,7 @@ label:first-of-type {
 .mt--3 {
   margin-top: -3rem;
 }
+
 .mt--54 {
   margin-top: -5.4rem
 }
