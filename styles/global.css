@@ -232,11 +232,13 @@ input.form-error {
   border-radius: 5px;
   cursor: pointer;
   margin-top: 1em;
-  transition: height 0.2s ease-in-out;
+  transition: height 0.2s, border .3s, color .3s ease-in
 }
+
 .tab:first-of-type {
   margin-top: unset;
 }
+
 .tab.selected {
   border: 1px solid hsl(243, 100%, 62%);
   background: hsl(231, 100%, 99%);
@@ -245,23 +247,65 @@ input.form-error {
 .tab-icon {
   margin-right: 1em;
 }
+
+.add-ons {
+  border-top: 1px solid hsl(231, 11%, 63%);
+  margin-top: 1em;
+}
+.add-ons > div {
+  margin: 1em 0;
+}
+
 /*End Mobile & Desktop */
+
+.form-final-wrapper{
+  padding: 5em 2em;
+}
+button.purplish-blue-bg{
+  transition: opacity .2s ease;
+}
+.btn-hover:hover {
+  opacity: .7;
+}
+.form-content > div {
+  border-radius: 5px;
+  padding: 1em;
+}
+.CheckBox {
+  width: 16px;
+  height: 16px;
+  border: 1px solid #ccc;
+  padding: 2px;
+  color: transparent;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: background .3s, color .3s ease-in
+}
+
+.CheckBox.checked {
+  color: #fff;
+  background: #355aff;
+  border-radius: 2px;
+}
 
 .billing {
   border-radius: 5px;
   margin-top: 1em;
 }
+
 .billing-tab.switch {
   position: relative;
   top: 5px;
 }
-.switch{
-  height: 17.2px;
+
+.switch {
+  height: 17.9px;
   width: 33px;
   border-radius: 50px;
   text-align: right;
   cursor: pointer;
 }
+
 .switch-knob {
   height: 10px;
   width: 10px;
@@ -270,27 +314,34 @@ input.form-error {
   margin: 4px;
   transition: transform 0.2s ease-in-out;
 }
+
 .switch-knob.off {
   transform: translateX(0px);
 }
+
 .switch-knob.on {
   transform: translateX(15px);
 }
+
 .billing-tab {
   display: inline-block;
   margin-right: 2em;
 }
+
 .billing-tab:last-of-type {
   margin-right: unset;
 }
-.billing-content{
+
+.billing-content {
   width: auto;
   display: inline-block;
   margin: 0 auto;
 }
+
 .pp8 {
   padding: .8em;
 }
+
 .mt--1 {
   margin-top: -1rem;
 }
@@ -317,6 +368,10 @@ input.form-error {
 
 .text-lg {
   font-size: 1.5rem;
+}
+
+.text-vlg {
+  font-size: 2rem;
 }
 
 .text-xl {

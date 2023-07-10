@@ -1,5 +1,8 @@
-import PersonalInfoComponent from "./PersonalInfoComponent";
-import PlanComponent from "./PlanComponent";
+import PreviewComponent from "../Previewcomponent";
+import AddOnComponent from "../AddOnComponent";
+import PersonalInfoComponent from "../PersonalInfoComponent";
+import PlanComponent from "../PlanComponent";
+import ThankYouComponent from "../ThankYouComponent";
 
 const MobileView = ({
   userInfo,
@@ -8,11 +11,13 @@ const MobileView = ({
   setFormError,
   page,
   setPage,
+  plans,
+  addOns,
 }) => {
   const goToPage = (pageNumber) => {
     if (page === 1 && page1hasErrors() === true) return;
-    
-    setPage(pageNumber)
+
+    setPage(pageNumber);
   };
   const page1hasErrors = () => {
     let error = false;
@@ -62,7 +67,7 @@ const MobileView = ({
             <span className={`${page === 3 ? "magnolia-bg marine-blue" : ""}`}>
               3
             </span>
-            <span className={`${page === 4 ? "magnolia-bg marine-blue" : ""}`}>
+            <span className={`${page === 4 || page === 5 ? "magnolia-bg marine-blue" : ""}`}>
               4
             </span>
           </div>
@@ -83,11 +88,32 @@ const MobileView = ({
             <PlanComponent
               userInfo={userInfo}
               setUserInfo={setUserInfo}
+              plans={plans}
             />
           )}
+
+          {page === 3 && (
+            <AddOnComponent
+              addOns={addOns}
+              userInfo={userInfo}
+              setUserInfo={setUserInfo}
+            />
+          )}
+
+          {page === 4 && (
+            <PreviewComponent
+              addOns={addOns}
+              plans={plans}
+              userInfo={userInfo}
+              setPage={setPage}
+            />
+          )}
+
+          {page === 5 && (<ThankYouComponent />)}
         </div>
       </div>
-      <footer className="footer white-bg text-right">
+      
+      {page < 5 && <footer className="footer white-bg text-right">
         <div className="space-between">
           <div>
             {page > 1 && (
@@ -99,16 +125,28 @@ const MobileView = ({
               </button>
             )}
           </div>
-          <div>
-            <button
-              className="pry marine-blue-bg white"
-              onClick={() => goToPage(page + 1)}
-            >
-              Next Step
-            </button>
-          </div>
+          {page < 5 && (
+            <div>
+              <button
+                className="pry btn-hover marine-blue-bg white"
+                onClick={() => goToPage(page + 1)}
+              >
+                Next Step
+              </button>
+            </div>
+          )}
+          {page === 5 && (
+            <div>
+              <button
+                className="pry btn-hover purplish-blue-bg white"
+                onClick={() => goToPage(page + 1)}
+              >
+                Confirm
+              </button>
+            </div>
+          )}
         </div>
-      </footer>
+      </footer>}
     </main>
   );
 };

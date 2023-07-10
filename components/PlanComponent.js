@@ -1,22 +1,6 @@
 import PlanItemComponent from "./PlanItemComponent";
-const PlanComponent = ({ userInfo, setUserInfo }) => {
-  const plans = [
-    {
-      name: "Arcade",
-      monthlyPrice: 9,
-      yearlyPrice: 90,
-    },
-    {
-      name: "Advanced",
-      monthlyPrice: 12,
-      yearlyPrice: 120,
-    },
-    {
-      name: "Pro",
-      monthlyPrice: 15,
-      yearlyPrice: 150,
-    },
-  ];
+const PlanComponent = ({ userInfo, setUserInfo, plans }) => {
+  
   return (
     <div className="form-wrapper marine-blue">
       <div className="form-title">
