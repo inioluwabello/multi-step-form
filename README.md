@@ -50,6 +50,7 @@ Users should be able to:
 ### Useful resources
 
 - [Color Space](https://mycolor.space/) - Really cool css gradients generator.
+- [Chat GPT](https://chat.openai.com/) - Got some snippets examples for map and filter
 
 ## Author
 
