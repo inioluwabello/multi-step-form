@@ -13,6 +13,7 @@ const MobileView = ({
   setPage,
   plans,
   addOns,
+  isMobile
 }) => {
   const goToPage = (pageNumber) => {
     if (page === 1 && page1hasErrors() === true) return;
@@ -89,6 +90,7 @@ const MobileView = ({
               userInfo={userInfo}
               setUserInfo={setUserInfo}
               plans={plans}
+              isMobile={isMobile}
             />
           )}
 

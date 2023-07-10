@@ -1,19 +1,21 @@
-const PlanItemComponent = ({ plan, userInfo, setUserInfo }) => {
+const PlanItemComponent = ({ plan, userInfo, setUserInfo, isMobile }) => {
   return (
     <div
-      className={`tab ${
-        plan.name === userInfo.plan ? "selected" : ""
+      className={`tab 
+      ${plan.name === userInfo.plan ? "selected " : ""} 
+      ${
+        isMobile === false ? "tab-desktop " : ""
       }`}
       onClick={() => setUserInfo({ ...userInfo, plan: plan.name })}
     >
-      <div className="fl">
+      <div className={`${isMobile === true ? "fl" : ""}`}>
         <div className="tab-icon">
           <img
             src={`/assets/images/icon-${plan.name.toLocaleLowerCase()}.svg`}
             alt=""
           />
         </div>
-        <div className="tab-text">
+        <div className={`tab-text ${isMobile === false ? "mt-3" : ""}`}>
           <div className="fontFaceUbuntuBold">{plan.name}</div>
           <div className="text-md cool-grey">
             $

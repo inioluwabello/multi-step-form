@@ -1,6 +1,5 @@
 import PlanItemComponent from "./PlanItemComponent";
-const PlanComponent = ({ userInfo, setUserInfo, plans }) => {
-  
+const PlanComponent = ({ userInfo, setUserInfo, plans, isMobile }) => {
   return (
     <div className="form-wrapper marine-blue">
       <div className="form-title">
@@ -10,28 +9,37 @@ const PlanComponent = ({ userInfo, setUserInfo, plans }) => {
         </p>
       </div>
 
-      <div className="form-content">
-        {plans.map((plan) => {
-          return (
-            <PlanItemComponent
-              key={plan.name}
-              plan={plan}
-              userInfo={userInfo}
-              setUserInfo={setUserInfo}
-            />
-          );
-        })}
-
+      <div className={`form-content`}>
+        <div className={`${isMobile === false ? "space-between tabs-wrapper" : ""}`}>
+          {plans.map((plan) => {
+            return (
+              <PlanItemComponent
+                key={plan.name}
+                plan={plan}
+                userInfo={userInfo}
+                setUserInfo={setUserInfo}
+                isMobile={isMobile}
+              />
+            );
+          })}
+        </div>
         <div className="billing alabaster-bg pp8 text-center fontFaceUbuntuMedium">
           <div className="billing-content">
             <div className="billing-tab">Monthly</div>
             <div
               className={`billing-tab switch marine-blue-bg text-left`}
-              onClick={() => {setUserInfo({ ...userInfo, billingPeriod: (userInfo.billingPeriod === "mo" ? "yr" : "mo")})}}
+              onClick={() => {
+                setUserInfo({
+                  ...userInfo,
+                  billingPeriod: userInfo.billingPeriod === "mo" ? "yr" : "mo",
+                });
+              }}
             >
-              <div className={`switch-knob white-bg ${
-                userInfo.billingPeriod === "mo" ? "off" : "on"
-              }`}></div>
+              <div
+                className={`switch-knob white-bg ${
+                  userInfo.billingPeriod === "mo" ? "off" : "on"
+                }`}
+              ></div>
             </div>
             <div className="billing-tab">Yearly</div>
           </div>

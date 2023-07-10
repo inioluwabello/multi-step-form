@@ -5,7 +5,7 @@ import MobileView from "../components/mobile/MobileView";
 import DesktopView from "../components/desktop/DesktopView";
 
 const Index = () => {
-  const [pageWidth, setPageWidth] = useState(770);
+  const [pageWidth, setPageWidth] = useState(1200);
 
   const handleWindowSizeChange = () => {
     const width = window.innerWidth;
@@ -26,9 +26,13 @@ const Index = () => {
 
   const isMobile = pageWidth <= 770;
 
-  const [userInfo, setUserInfo] = useState({billingPeriod: "mo", plan: "Arcade", addOns: [1]});
+  const [userInfo, setUserInfo] = useState({
+    billingPeriod: "mo",
+    plan: "Arcade",
+    addOns: [1],
+  });
   const [formError, setFormError] = useState({});
-  const [page, setPage] = useState(1);
+  const [page, setPage] = useState(2);
 
   const plans = [
     {
@@ -86,9 +90,22 @@ const Index = () => {
               setPage={setPage}
               plans={plans}
               addOns={addOns}
+              isMobile={isMobile}
             />
           )}
-          {!isMobile && <DesktopView />}
+          {!isMobile && (
+            <DesktopView
+              userInfo={userInfo}
+              setUserInfo={setUserInfo}
+              formError={formError}
+              setFormError={setFormError}
+              page={page}
+              setPage={setPage}
+              plans={plans}
+              addOns={addOns}
+              isMobile={isMobile}
+            />
+          )}
         </div>
       </Layout>
     </>

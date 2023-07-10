@@ -128,16 +128,17 @@ body {
 
 /* layout.js */
 .content {
+  min-height: 100vh;
   height: 100vh;
   width: 100%;
   padding: 0;
   margin: 0;
-  overflow: auto;
+  overflow: hidden;
 }
 
 /* Index.js */
 .centered-content {
-  width: 500px;
+  max-width: 900px;
   min-height: 100%;
   margin: 0px auto;
   display: flex;
@@ -145,11 +146,62 @@ body {
   justify-content: center;
 }
 
+/* Desktop */
+.left-content {
+  min-height: 500px;
+  width: 35%;
+  background: url("/assets/images/bg-sidebar-desktop.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: 1em;
+  border-radius: 10px;
+}
+
+.right-content {
+  width: 75%;
+}
+
+.desktop-footer {
+  position: absolute;
+  right: 1em;
+  bottom: 1em;
+  padding: .5em
+}
+
+.tabs-wrapper {
+  align-items: flex-end;
+  min-height: 170px;
+}
+
+.tab-desktop {
+  height: 100%;
+  width: 30%;
+}
+
+.desktop-view {
+  width: 800px;
+  min-height: 500px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0px 5px 12px -4px hsl(229, 24%, 87%);
+}
+
+.form-final-wrapper {
+  padding: 8em 2em;
+}
+
+.form-wrapper {
+  height: 100%;
+}
+
+/* End of Desktop */
+
 /* Mobile */
 @media only screen and (max-width: 700px) {
   .centered-content {
     width: 100% !important;
     align-items: start !important;
+    padding-top: unset;
   }
 }
 
@@ -158,7 +210,8 @@ body {
   padding-bottom: 4rem;
 }
 
-.main-content-mobile {
+.main-content-mobile,
+.main-content-desktop {
   min-height: 200px;
   width: 100%;
   border-radius: 10px;
@@ -206,6 +259,7 @@ body {
 
 label {
   margin-top: 1em;
+  width: 100%;
 }
 
 label:first-of-type {
@@ -243,6 +297,7 @@ input.form-error {
   border: 1px solid hsl(243, 100%, 62%);
   background: hsl(231, 100%, 99%);
 }
+
 .tab:hover {
   border: 1px solid hsl(243, 100%, 62%);
 }
@@ -255,31 +310,38 @@ input.form-error {
   border-top: 1px solid hsl(231, 11%, 63%);
   margin-top: 1em;
 }
-.add-ons > div {
+
+.add-ons>div {
   margin: 1em 0;
 }
 
 /*End Mobile & Desktop */
 
-.form-final-wrapper{
+.form-final-wrapper {
   padding: 5em 2em;
 }
-button.purplish-blue-bg{
+
+button.purplish-blue-bg {
   transition: opacity .2s ease;
 }
+
 .btn-hover:hover {
   opacity: .7;
 }
+
 .link-text {
   cursor: pointer;
 }
+
 .link-hover:hover {
   color: hsl(243, 100%, 62%);
 }
-.form-content > div {
+
+.form-content>div {
   border-radius: 5px;
   padding: 1em;
 }
+
 .CheckBox {
   width: 16px;
   height: 16px;
