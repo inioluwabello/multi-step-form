@@ -12,9 +12,9 @@ const Index = () => {
     setPageWidth(width);
   };
 
-  setTimeout(() => {
+  useEffect(() => {
     handleWindowSizeChange();
-  }, 500);
+  })
 
   useEffect(() => {
     window.addEventListener("resize", handleWindowSizeChange);
